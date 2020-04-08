@@ -1,0 +1,59 @@
+{
+  "name": "electron-typescript-quick-start",
+  "version": "1.0.0",
+  "description": "A minimal Electron application (with typescript)",
+  "main": "compile/main.js",
+  "scripts": {
+    "clean": "rimraf ./compile ./dist",
+    "compile": "tsc && npm run compile-react",
+    "compile-react": "npx babel views/notification/notification.tsx --out-file views/notification/notification.js",
+    "dist-linux": "electron-builder --config ./electron-builder.json --linux",
+    "dist-mac": "electron-builder --config ./electron-builder.json --mac",
+    "dist-windows": "electron-builder --config ./electron-builder.json --win",
+    "tslint": "tslint --project .",
+    "tslint-fix": "tslint --project . --fix",
+    "postinstall": "electron-builder install-app-deps",
+    "prestart": "npm run compile",
+    "start": "electron .",
+    "watch": "tsc -w"
+  },
+  "repository": "https://github.com/aabuhijleh/electron-typescript-quick-start",
+  "keywords": [
+    "Electron",
+    "quick",
+    "start",
+    "tutorial",
+    "demo",
+    "typescript"
+  ],
+  "author": {
+    "name": "author name",
+    "email": "author@email.com",
+    "url": "http://author.example.com/"
+  },
+  "license": "CC0-1.0",
+  "devDependencies": {
+    "@babel/cli": "^7.8.4",
+    "@babel/core": "^7.9.0",
+    "@babel/plugin-proposal-class-properties": "^7.8.3",
+    "@babel/plugin-transform-react-jsx": "^7.9.4",
+    "@babel/preset-env": "^7.9.5",
+    "@babel/preset-react": "^7.9.4",
+    "@babel/preset-typescript": "^7.9.0",
+    "@types/node": "^13.11.0",
+    "@types/qs": "^6.9.1",
+    "@types/react": "^16.9.32",
+    "@types/react-dom": "^16.9.6",
+    "electron": "^8.2.1",
+    "electron-builder": "^22.4.1",
+    "rimraf": "^3.0.2",
+    "tslint": "^6.1.1",
+    "typescript": "^3.8.3"
+  },
+  "dependencies": {
+    "@aabuhijleh/app-notification": "^1.0.0",
+    "qs": "^6.9.3",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1"
+  }
+}
