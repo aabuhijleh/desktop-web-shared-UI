@@ -52,7 +52,7 @@
   },
   "dependencies": {
     "@aabuhijleh/app-notification": "^1.0.0",
-    "qs": "^6.9.3",
+    "qs": "^6.9.7",
     "react": "^16.13.1",
     "react-dom": "^16.13.1"
   }
